@@ -62,6 +62,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+/*top-bar start*/
 .top-bar {
     height: 28px;
     display: flex;
@@ -81,6 +82,116 @@ body {
     color:#3fb5ed;
 }
 
-.header {
-    width: 100%;
+/*header start*/
+@media(max-width: 768px){
+    .header {
+        flex-direction: column;
+        height: auto;
+    }
+    .header img {
+        padding-bottom: 10px;
+    }
+    .header .nav {
+         display: grid;
+         grid-template-columns: 200px 200px;
+         grid-row: auto auto;
+         grid-column-gap: 20px;
+         grid-row-gap: 20px;
+    }
+    .content-list {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        
+    }
+    .content-list li div{
+        width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+   .content-list li div h2 {
+        font-size: 22px;
+   }
+   .content-list li div p,.jquery-list li {
+    font-size: 18px;
+   }
 }
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 5px 10px 10px -15px #111; 
+}
+.header img {
+    height: 37px;
+}
+.header .nav {
+    display: flex;
+}
+.nav li a {
+    text-decoration: none;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-bottom: 15px;
+    color: #00cc99;
+}
+.nav li a:hover {
+    font-weight: bold;
+    border-bottom: 3px solid #00cc99;
+}
+
+/*content start*/
+.content-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+
+}
+.content-list li {
+    width: 30%;
+    text-align: center;
+    
+}
+.content-list li div {
+    padding: 15px;
+    border: 1px solid lightgray;
+    height: 350px;
+    border-radius: 5px;
+}
+.content-list li div h2 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.content-list li div p {
+    line-height: 1.5;
+    
+}
+.jquery-list li {
+    width: 100%;
+    line-height: 1.5;
+    height: auto;
+    list-style: inside;
+}
+.jquery-list {
+    padding-bottom: 13px;
+}
+
+.footer {
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    background-color: lightgray;
+}
+
+
+/*{
+    Outline: 1px solid #000;
+    }
