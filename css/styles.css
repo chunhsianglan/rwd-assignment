@@ -63,15 +63,19 @@ body {
     margin: 0 auto;
 }
 /*top-bar start*/
+/*1.取消 .top-bar 的高度，不寫死高度讓內元素 padding 撐開就能達到自動調整的效果，內元素變多也不會跑版。
+接著同學可以在 .top-bar a 設置上下 padding ，並且加上 display:flex 達到撐出高度的效果，最後加上 align-item:center 即可水平置中。*/
 .top-bar {
-    height: 28px;
+    /*height: 28px;*/
     display: flex;
     justify-content: flex-end;
     align-items: center;
     background-color: lightgray;
 }
 .top-bar a{
-    padding-right: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
     font-size: 13px;
     text-decoration: none;
 }
@@ -95,21 +99,32 @@ body {
 }
 .header img {
     height: 37px;
+    padding-bottom: 10px;
 }
+
 .header .nav {
     display: flex;
+    justify-content: flex-end;
+    width: 30%;
+}
+.nav li {
+    width: 50%;
 }
 .nav li a {
+    display: block;
     text-decoration: none;
-    padding-right: 7px;
+    padding: 7px 0px;
+    /*padding-right: 7px;
     padding-left: 7px;
-    padding-bottom: 15px;
+    padding-bottom: 15px;*/
     color: #00cc99;
 }
 .nav li a:hover {
     font-weight: bold;
     border-bottom: 3px solid #00cc99;
 }
+
+/*同學 .content-list li 設置了 width:30% 但內元素卻過寬，將其改成 auto 即可。*/
 
 /*content start*/
 .content-list {
@@ -120,7 +135,7 @@ body {
 
 }
 .content-list li {
-    width: 30%;
+    width: 33%;
     text-align: center;
     
 }
@@ -155,6 +170,7 @@ body {
     margin-top: 20px;
     background-color: lightgray;
 }
+/*可以在.nav 上使用 flex-wrap:wrap 讓空間不足時內元素會自動換行，這時候設置 .nav width:100% 而 li 寬度為其一半 width:50% 這時候，就會是一行有兩個選項的狀態了。同學也要記得 a 標籤盡量都設置 為 display:block 使用者才更好點選，也才會產生真的有效的寬高區域範圍，去撐開外部元素。*/
 
 @media(max-width: 768px){
     .header {
@@ -165,16 +181,15 @@ body {
         padding-bottom: 10px;
     }
     .header .nav {
-         display: grid;
-         text-align: center;
-         grid-template-columns: 120px 120px;
-         grid-row: auto auto;
-         grid-column-gap: 20px;
-         grid-row-gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
     }
     .content-list {
         flex-direction: column;
         align-items: center;
+    }
+    .content-list li {
+        width: auto;
     }
     .content-list li div{
         width: 300px;
@@ -189,6 +204,10 @@ body {
    }
    .nav li a {
     padding-bottom: 10px;
+    text-align: center;
+   }
+   .nav li a:hover {
+    border-bottom: none;
    }
 }
 
